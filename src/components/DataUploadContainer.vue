@@ -32,7 +32,7 @@
       <div class="method-box">
         <h3>방법 2</h3>
         <p class="description">
-          사용자 정보 이미지를 AI에게 전달하여 받은 엑셀/CSV 파일을 업로드
+          사용자 정보 이미지를 AI에게 전달하여 받은 엑셀 파일을 업로드
         </p>
         <div class="button-group">
           <button class="prompt-btn" @click="showPromptModal">
@@ -86,18 +86,20 @@ function loadDummy() {
 }
 .subtitle {
   text-align: center;
-  margin-bottom: 24px;
-  color: #666;
+  color: var(--color-gray);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: left;
 }
 .method-container {
   display: flex;
-  gap: 24px;
+  gap: var(--size-large);
   width: 100%;
   flex-wrap: wrap;
 }
 .method-box {
   flex: 1;
-  border: 1px solid var(--light-gray-color);
+  border: 1px solid var(--color-gray);
   border-radius: var(--border-radius);
   padding: 24px;
   text-align: center;
@@ -125,12 +127,11 @@ function loadDummy() {
 }
 .file-info {
   margin-top: 16px;
-  font-size: 14px;
-  color: #666;
+  color: var(--color-gray);
   height: 20px;
 }
 .prompt-btn {
-  background-color: var(--secondary-color);
+  background-color: var(--color-primary);
   color: white;
   padding: 12px 24px;
   border: none;
@@ -145,7 +146,6 @@ function loadDummy() {
   background-color: #2c3e50;
 }
 .upload-btn {
-  background-color: var(--primary-color);
   color: white;
   padding: 12px 24px;
   border: none;
@@ -178,7 +178,6 @@ function loadDummy() {
 
 /* 예시 데이터 링크 스타일 */
 .dummy-link-wrapper {
-  margin-top: 24px;
   text-align: center;
 }
 .dummy-data-link {
@@ -189,5 +188,15 @@ function loadDummy() {
 }
 .dummy-data-link:hover {
   color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  .method-container {
+    flex-direction: column;
+    align-items: center;
+    .method-box {
+      min-width: unset;
+    }
+  }
 }
 </style>
